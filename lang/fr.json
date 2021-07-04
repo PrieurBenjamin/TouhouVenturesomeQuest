@@ -1,0 +1,39 @@
+{
+  "touhouvq": {
+    "type": {
+      "melee": "Arme de corps-à-corps",
+      "ranged": "Arme à distance"
+    },
+    "race": {
+      "human":"Humain",
+      "youkai":"Youkai",
+      "ghost":"Fantôme",
+      "vampire":"Vampire",
+      "fairy":"Fée",
+      "crowtengu":"Tengu Corbeau",
+      "whitewolftengu":"Tengu Loup-blanc",
+      "greattengu":"Grand tengu",
+      "lunarrabbit":"Lapin lunaire",
+      "oni":"Oni",
+      "amanojaku":"Amanojaku",
+      "inchling":"Kobito",
+      "kappa":"Kappa",
+      "halfyoukai":"Demi-Youkai",
+      "celestial":"Céleste",
+      "hermit":"Ermite",
+      "shinigami":"Shinigami",
+      "arahitogami":"Arahitogami",
+      "tsukumogami":"Tsukumogami",
+      "lunarian":"Sélénite",
+      "earthrabbit":"Lapin de la Terre",
+      "bakedanuki":"Bake-danuki",
+      "yamabiko":"Yamabiko"
+    },
+    "itemText": {
+      "weaponTypeText": "Type d'Arme",
+      "damageText": "Dégâts",
+      "rangedText": "Portée",
+      "rangeThrowingText": "Portée de Lancer"
+    }
+  }
+}
