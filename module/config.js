@@ -8,7 +8,7 @@ touhouvq.raceListing = {
   fairy:"touhouvq.race.fairy",
   crowtengu:"touhouvq.race.crowtengu",
   whitewolftengu:"touhouvq.race.whitewolftengu",
-  greatengu:"touhouvq.race.greattengu",
+  greattengu:"touhouvq.race.greattengu",
   lunarrabbit:"touhouvq.race.lunarrabbit",
   oni:"touhouvq.race.oni",
   amanojaku:"touhouvq.race.amanojaku",
@@ -20,7 +20,6 @@ touhouvq.raceListing = {
   shinigami:"touhouvq.race.shinigami",
   arahitogami:"touhouvq.race.arahitogami",
   tsukumogami:"touhouvq.race.tsukumogami",
-  lunarian:"touhouvq.race.lunarian",
   earthrabbit:"touhouvq.race.earthrabbit",
   bakedanuki:"touhouvq.race.bakedanuki",
   yamabiko:"touhouvq.race.yamabiko"

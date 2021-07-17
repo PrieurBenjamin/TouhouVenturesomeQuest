@@ -8,12 +8,11 @@
         <div class="tvq-char-infos-div">
             <select name="data.races"  class="tvq-input tvq-input-race" type="text" value="{{data.races}}">
                 {{#select data.data.races}}
-                {{#each config.raceListing as |name race|}}
-                <option value="{{race}}">{{localize name}}</option>
-                {{/each}}
+                    {{#each config.raceListing as |name race|}}
+                        <option value="{{race}}">{{localize name}}</option>
+                    {{/each}}
                 {{/select}}
             </select>
-            <!-- <input class="tvq-input tvq-input-race" type="text" name="char_race" value="Tsukumogami"> -->
             <p class="tvq-p">Race</p>
         </div>
         <div class="tvq-char-infos-div">
@@ -40,8 +39,13 @@
             <input class="tvq-input tvq-input-hairs" type="text" name="char_race" value="Bruns">
             <p class="tvq-p">Couleur des cheveux</p>
         </div>
+        <div class="tvq-upperside-person">
+            <a class="tvq-button-bodyloc" data-race-value="{{data.data.races}}">
+                <i class="fas fa-male"></i>
+            </a>
+        </div>
         <div class="tvq-side-bloc-2">
-            <div class="tvq-side-bloc-bloc tvq-border">
+            <div class="tvq-side-bloc-bloc-def tvq-border">
                 <div class="tvq-side-bloc-content">
                     <p class="tvq-side-bloc-p-defense">Défense</p>
                     <hr class="tvq-custom-hr">

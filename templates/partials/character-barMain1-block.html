@@ -2,49 +2,49 @@
 
     <div class="tvq-char-stat">
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-strength tvq-border" data-action-value="{{data.data.stats.strength}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-strength-color">Force</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.strength" value="{{data.data.stats.strength}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-agility tvq-border" data-action-value="{{data.data.stats.agility}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-agility-color">Agilité</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.agility" value="{{data.data.stats.agility}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-resilience tvq-border" data-action-value="{{data.data.stats.resilience}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-endurance-color">Endurance</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.resilience" value="{{data.data.stats.resilience}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-discipline tvq-border" data-action-value="{{data.data.stats.discipline}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-discipline-color">Discipline</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.discipline" value="{{data.data.stats.discipline}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-perception tvq-border" data-action-value="{{data.data.stats.perception}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-perception-color">Perception</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.perception" value="{{data.data.stats.perception}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-magic tvq-border" data-action-value="{{data.data.stats.magic}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-magic-color">Magie</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.magic" value="{{data.data.stats.magic}}">
             </div>
         </div>
 
-        <div class="tvq-char-stat-bloc tvq-border">
+        <div class="tvq-char-stat-bloc tvq-char-stat-bloc-intelligence tvq-border" data-action-value="{{data.data.stats.intelligence}}" data-fatigue-value="{{data.data.fatigue.value}}">
             <div class="tvq-char-stat-content">
                 <p class="tvq-intellect-color">Intelligence</p>
                 <input class="tvq-char-stat-input" type="text" name="data.stats.intelligence" value="{{data.data.stats.intelligence}}">
@@ -347,6 +347,22 @@
         <div class="tvq-char-sheet-body-bar3">
 
             <div class="tvq-side-bloc-full tvq-border">
+                <div class="tvq-side-bloc-full tvq-border tvq-equipment">
+                    <div class="tvq-side-bloc-content">
+                        <p class="tvq-side-bloc-p">Equipement</p>
+                        <hr class="tvq-custom-hr">
+
+                        <section class="weapon-list">
+                            {{#each weapons as |weapon id|}}
+                                {{> "systems/touhouvq/templates/partials/weapon-card.html" weapon inSheet=true}}
+                            {{/each}}
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tvq-side-bloc-full tvq-border">
                 <div class="tvq-side-bloc-content">
                     <p class="tvq-full-bloc-p">Connaissances</p>
 
@@ -483,38 +499,6 @@
                             </div>
                         </div>
 
-                </div>
-            </div>
-
-            <div class="tvq-side-bloc-full tvq-border">
-                <div class="tvq-side-bloc-full tvq-border tvq-equipment">
-                    <div class="tvq-side-bloc-content">
-                        <p class="tvq-side-bloc-p">Equipement</p>
-                        <hr class="tvq-custom-hr">
-
-                        <section class="weapon-list">
-                            {{#each weapons as |weapon id|}}
-                                <div data-type="item" class="weapon-card item" data-item-id={{weapon._id}}>
-                                    <div class="weapon-info weapon-name">
-                                        <p class="weapon-name-name">{{name}}</p>
-                                        <div class="weapon-name-body">
-                                            <a class="item-delete a-item">
-                                                <i class="fas fa-dice-d20"></i>
-                                                <p class="weapon-attack-damage">{{data.damage}}</p>
-                                            </a>
-                                            <a class="item-delete">
-                                                <i class="fas fa-pen"></i>
-                                            </a>
-                                            <a class="item-delete">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{/each}}
-                        </section>
-
-                    </div>
                 </div>
             </div>
 

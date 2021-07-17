@@ -8,7 +8,7 @@
       "fairy":"Fairy",
       "crowtengu":"Crow Tengu",
       "whitewolftengu":"White wolf tengu",
-      "greatengu":"Great tengu",
+      "greattengu":"Great tengu",
       "lunarrabbit":"Lunar rabbit",
       "oni":"Oni",
       "amanojaku":"Amanojaku",
@@ -20,7 +20,6 @@
       "shinigami":"Shinigami",
       "arahitogami":"Arahitogami",
       "tsukumogami":"Tsukumogami",
-      "lunarian":"Lunarian",
       "earthrabbit":"Earth Rabbit",
       "bakedanuki":"Bake-danuki",
       "yamabiko":"Yamabiko"
@@ -62,12 +61,12 @@
         },
         "yen":{
           "value":0
-        },
-        "deathSaves":{
-          "value1":0,
-          "value2":0,
-          "value3":0
         }
+      },
+      "deathSaves":{
+        "value1":0,
+        "value2":0,
+        "value3":0
       },
       "levelBased":{
         "level":0,
