@@ -1,0 +1,201 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  <div class="tvq-weaponsheet-main sheet-items">
+
+    {{#if compname}}
+
+      {{#if (eq talentSkillType "startertalent")}}
+        <div class="tvq-weaponsheet-div1">
+
+          <div class="tvq-weaponsheet-div1-img">
+
+            {{#if (eq compname1 "mecanical1")}}
+              <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+            {{else}}
+              {{#if (eq compname1 "mecanical2")}}
+                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+              {{else}}
+                {{#if (eq compname1 "mecanical3")}}
+                  <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+                {{else}}
+                  {{#if (eq compname1 "mecanical4")}}
+                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+                  {{else}}
+                    {{#if (eq compname1 "mecanical5")}}
+                      <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+                    {{else}}
+                      {{#if (eq compname1 "mecanical6")}}
+                        <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{compname1}}.webp" title="{{compname}}">
+                      {{else}}
+                        <img src="systems/touhouvq/assets/img/talentsandskills/{{race}}/{{compname1}}.webp" title="{{compname}}"/>
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/if}}
+
+          </div>
+
+        </div>
+      
+        <div class="tvq-weaponsheet-div2">
+
+          <div class="tvq-weaponsheet-div3-intro">
+            <h1><input name="compname" type="text" value="{{compname}}" disabled/></h1>
+          </div>
+
+          <div class="tvq-weaponsheet-div2-info">
+
+            <div class="tvq-weaponsheet-div2-info-1">
+              <div class="tvq-weaponsheet-div2-info-1-2">
+                <input class="damage" name="XPCost" type="text" value="{{localize "touhouvq.sheettext.startertalent"}}" disabled/>
+                <div class="tvq-weaponsheet-text">{{localize "touhouvq.sheet.XPCostText"}}</div>
+              </div>
+            </div>
+
+            <div class="tvq-weaponsheet-div2-info-2">
+              <div class="tvq-weaponsheet-div2-info-2-2">
+                <input class="rangeThrowing" name="requiredLevel" type="text" value="0" disabled/>
+                <div class="tvq-weaponsheet-text">{{localize "touhouvq.sheet.LVRequiredText"}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tvq-weaponsheet-div2-desc div-height">
+
+            <div class="sheet-perk">
+              <p>{{{compdesc}}}</p>
+            </div>
+            <div class="tvq-weaponsheet-text-1 tvq-weaponsheet-text-margin">{{localize "touhouvq.itemText.descText"}}</div>
+
+          </div>
+
+        </div>
+      {{/if}}
+
+      {{#if (eq talentSkillType "raceskill")}}
+        <div class="tvq-weaponsheet-div1">
+
+          <div class="tvq-weaponsheet-div1-img">
+
+            {{#if (eq compname1 "mecanical1")}}
+              <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+            {{else}}
+              {{#if (eq compname1 "mecanical2")}}
+                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+              {{else}}
+                {{#if (eq compname1 "mecanical3")}}
+                  <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+                {{else}}
+                  {{#if (eq compname1 "mecanical4")}}
+                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+                  {{else}}
+                    {{#if (eq compname1 "mecanical5")}}
+                      <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+                    {{else}}
+                      {{#if (eq compname1 "mecanical6")}}
+                        <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{compname}}">
+                      {{else}}
+                        <img src="systems/touhouvq/assets/img/talentsandskills/{{race}}/{{compname1}}.webp" title="{{compname}}"/>
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          </div>
+
+        </div>
+      
+        <div class="tvq-weaponsheet-div2">
+
+          <div class="tvq-weaponsheet-div3-intro">
+            <h1><input name="compname" type="text" value="{{compname}}" disabled/></h1>
+          </div>
+
+          <div class="tvq-weaponsheet-div2-info">
+
+            <div class="tvq-weaponsheet-div2-info-1">
+              <div class="tvq-weaponsheet-div2-info-1-2">
+                <input class="damage" name="XPCost" type="text" value="{{localize "touhouvq.sheettext.raceskill"}}" disabled/>
+                <div class="tvq-weaponsheet-text">{{localize "touhouvq.sheet.XPCostText"}}</div>
+              </div>
+            </div>
+
+            <div class="tvq-weaponsheet-div2-info-2">
+              <div class="tvq-weaponsheet-div2-info-2-2">
+                <input class="rangeThrowing" name="requiredLevel" type="text" value="0" disabled/>
+                <div class="tvq-weaponsheet-text">{{localize "touhouvq.sheet.LVRequiredText"}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tvq-weaponsheet-div2-desc div-height">
+
+            <div class="sheet-perk">
+              {{{compdesc}}}
+            </div>
+            <div class="tvq-weaponsheet-text-1 tvq-weaponsheet-text-margin">{{localize "touhouvq.itemText.descText"}}</div>
+
+          </div>
+
+        </div>
+      {{/if}}
+    {{else}}
+      <div class="tvq-weaponsheet-div1">
+
+        <div class="tvq-weaponsheet-div1-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+
+        {{#if isGM}}
+          <div class="tvq-weaponsheet-divgm">
+            <input class="idname-input" name="data.idname" type="text" value="{{data.data.idname}}"/>
+            <div class="tvq-weaponsheet-text">{{localize "touhouvq.itemText.idname"}}</div>
+            <span class="tooltiptext">{{localize "touhouvq.itemText.tooltipWarning"}}</span>
+          </div>
+        {{/if}}
+
+      </div>
+    
+      <div class="tvq-weaponsheet-div2">
+
+        <div class="tvq-weaponsheet-div3-intro">
+          <h1><input name="name" type="text" value="{{item.name}}"/></h1>
+        </div>
+
+        <div class="tvq-weaponsheet-div2-info">
+
+          <div class="tvq-weaponsheet-div2-info-1">
+            <div class="tvq-weaponsheet-div2-info-1-2">
+              <input class="damage" name="data.XPCost" type="text" value="{{data.data.XPCost}}"/>
+              <div class="tvq-weaponsheet-text">{{localize config.textData.XPCostText}}</div>
+            </div>
+          </div>
+
+          <div class="tvq-weaponsheet-div2-info-2">
+            <div class="tvq-weaponsheet-div2-info-2-2">
+              <input class="rangeThrowing" name="data.requiredLevel" type="text" value="{{data.data.requiredLevel}}"/>
+              <div class="tvq-weaponsheet-text">{{localize config.textData.LVRequiredText}}</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tvq-weaponsheet-div2-desc div-height">
+          <div class="sheet-perk">
+            {{editor content=data.data.effect target='data.effect' button=true owner=true editable=true}}
+          </div>
+          <div class="tvq-weaponsheet-text-1 tvq-weaponsheet-text-margin">{{localize config.textData.effect}}</div>
+
+        </div>
+
+      </div>
+    {{/if}}
+
+  </div>
+
+</form>

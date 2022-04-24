@@ -2,11 +2,10 @@
   "name": "touhouvq",
   "title": "Touhou: Venturesome Quest!",
   "description": "A system for playing Touhou: Venturesome Quest!, the touhou tabletop roleplay game that can be played in the Foundry Virtual Tabletop environment.",
-  "version": 1.0,
+  "version": 0.95,
   "author": "Benjamin Prieur",
-  "minimumCoreVersion": "0.8.2",
-  "compatibleCoreVersion": "0.8.2",
-  "url": "https://gitlab.com/BenjaminPrieur/touhouvq-foundryvttgamesystem",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "0.8.9",
   "esmodules": [
     "touhouvq.js"
   ],
@@ -14,7 +13,55 @@
     "touhouvq.css"
   ],
   "packs": [
-    
+    {
+      "name":"itemObjects",
+      "label":"Objects Compendium [TVQ!][FR]",
+      "path":"./packs/objects.db",
+      "entity":"Item",
+      "private":true
+    },
+    {
+      "name":"itemWeapons",
+      "label":"Weapons Compendium [TVQ!][FR]",
+      "path":"./packs/weapons.db",
+      "entity":"Item",
+      "private":true
+    },
+    {
+      "name":"itemArmors",
+      "label":"Armors Compendium [TVQ!][FR]",
+      "path":"./packs/armors.db",
+      "entity":"Item",
+      "private":true
+    },
+    {
+      "name":"itemTalents",
+      "label":"Talents Compendium [TVQ!][FR]",
+      "path":"./packs/talents.db",
+      "entity":"Item",
+      "private":true
+    },
+    {
+      "name":"itemSpellcards",
+      "label":"Spellcards Compendium [TVQ!][FR]",
+      "path":"./packs/spellcards.db",
+      "entity":"Item",
+      "private":true
+    },
+    {
+      "name":"itemCharacters",
+      "label":"Characters Compendium [TVQ!][FR]",
+      "path":"./packs/enemies.db",
+      "entity":"Actor",
+      "private":true
+    },
+    {
+      "name":"itemLootTables",
+      "label":"Loot Tables Compendium [TVQ!][FR]",
+      "path":"./packs/loottables.db",
+      "entity":"RollTable",
+      "private":true
+    }
   ],
   "languages": [
     {
@@ -25,6 +72,11 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "attributes.hp",
-  "initiative": "1d10"
+  "primaryTokenAttribute": "health",
+  "initiative": "1d10",
+  "socket": "true",
+  "url": "https://gitlab.com/BenjaminPrieur/touhouvq",
+  "manifest": "https://gitlab.com/BenjaminPrieur/touhouvq/-/raw/master/system.json",
+  "download": "https://gitlab.com/BenjaminPrieur/touhouvq/-/archive/master/touhouvq-master.zip",
+  "license": "LICENSE"
 }

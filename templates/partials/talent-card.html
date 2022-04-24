@@ -1,0 +1,91 @@
+<div class="dice-roll">
+    <div class="dice-result">
+
+        {{#if (eq data.race "mecanical1")}}
+            {{#if (eq talentSkillType "raceskill")}}
+                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+            {{else}}
+                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+            {{/if}}
+        {{else}}
+            {{#if (eq data.race "mecanical2")}}
+                {{#if (eq talentSkillType "raceskill")}}
+                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+                {{else}}
+                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+                {{/if}}
+            {{else}}
+                {{#if (eq data.race "mecanical3")}}
+                    {{#if (eq talentSkillType "raceskill")}}
+                        <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+                    {{else}}
+                        <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+                    {{/if}}
+                {{else}}
+                    {{#if (eq data.race "mecanical4")}}
+                        {{#if (eq talentSkillType "raceskill")}}
+                            <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+                        {{else}}
+                            <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+                        {{/if}}
+                    {{else}}
+                        {{#if (eq data.race "mecanical5")}}
+                            {{#if (eq talentSkillType "raceskill")}}
+                                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+                            {{else}}
+                                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+                            {{/if}}
+                        {{else}}
+                            {{#if (eq data.race "mecanical6")}}
+                                {{#if (eq talentSkillType "raceskill")}}
+                                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/crush.webp" title="{{data.compname}}">
+                                {{else}}
+                                    <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/mecanical/{{data.compname1}}.webp" title="{{data.compname}}">
+                                {{/if}}
+                            {{else}}
+                                <img class="tvq-weaponcheck-img" src="systems/touhouvq/assets/img/talentsandskills/{{data.race}}/{{data.compname1}}.webp" title="{{data.compname}}">
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+        
+        <div class="dice-formula tvq-dice-formula-weapon">
+            {{data.compname}}
+        </div>
+
+        {{#if (eq talentSkillType "startertalent")}}
+            <div class="tvq-spellcard-show">
+                <p class="tvq-spellcard-card-unsealing">{{localize 'touhouvq.sheettext.startertalent'}}</p>
+            </div>
+        {{/if}}
+
+        {{#if (eq talentSkillType "raceskill")}}
+            <div class="tvq-spellcard-show">
+                <p class="tvq-spellcard-card-thought">{{localize 'touhouvq.sheettext.raceskill'}}</p>
+            </div>
+        {{/if}}
+
+        <img class="deploy-down" src="systems/touhouvq/assets/img/expand-down.webp">
+
+        <div class="dice-tooltip">
+            <section class="tooltip-part">
+                <div class="dice">
+                    <header class="part-header flexrow">
+                        <span class="part-formula">
+                        </span>
+                    </header>
+                    <ol class="dice-rolls">
+                        <li>
+                            <div class="tvq-weaponperk-show-talent">
+                                <p>{{{data.compdesc}}}</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>

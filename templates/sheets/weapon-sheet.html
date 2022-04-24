@@ -1,18 +1,126 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
+  <!--
     <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
-        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Nom"/></h1>
     </header>
-    <div class="sheet-items">
-      <table>
-        <tr>
-          <th>{{localize config.textData.weaponTypeText}}</th>
-          <th>{{localize config.textData.damageText}}</th>
-          <th>{{localize config.textData.rangedText}}</th>
-          <th>{{localize config.textData.rangeThrowingText}}</th>
-        </tr>
-        <tr>
-          <td>
+  -->
+
+  <div class="tvq-weaponsheet-main sheet-items">
+
+    <div class="tvq-weaponsheet-div1">
+
+      {{#if (eq data.data.rarity "common")}}
+        <div class="tvq-weaponsheet-div1-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      {{#if (eq data.data.rarity "uncommon")}}
+        <div class="tvq-weaponsheet-div2-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      {{#if (eq data.data.rarity "rare")}}
+        <div class="tvq-weaponsheet-div3-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      {{#if (eq data.data.rarity "singular")}}
+        <div class="tvq-weaponsheet-div4-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      {{#if (eq data.data.rarity "unique")}}
+        <div class="tvq-weaponsheet-div5-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      {{#if (eq data.data.rarity "youkai")}}
+        <div class="tvq-weaponsheet-div6-img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+      {{/if}}
+
+      <div class="tvq-weaponsheet-div1-rarity">
+        <div class="tvq-weaponsheet-text-rarity">{{localize config.textData.weaponRarityText}}</div>
+
+        {{#if (eq data.data.rarity "common")}}
+        <select name="data.rarity" class="tvq-select-rarity tvq-rarity-common">
+        {{/if}}
+
+        {{#if (eq data.data.rarity "uncommon")}}
+          <select name="data.rarity" class="tvq-select-rarity tvq-rarity-uncommon">
+        {{/if}}
+
+        {{#if (eq data.data.rarity "rare")}}
+          <select name="data.rarity" class="tvq-select-rarity tvq-rarity-rare">
+        {{/if}}
+
+        {{#if (eq data.data.rarity "singular")}}
+          <select name="data.rarity" class="tvq-select-rarity tvq-rarity-singular">
+        {{/if}}
+
+        {{#if (eq data.data.rarity "unique")}}
+          <select name="data.rarity" class="tvq-select-rarity tvq-rarity-unique">
+        {{/if}}
+
+        {{#if (eq data.data.rarity "youkai")}}
+          <select name="data.rarity" class="tvq-select-rarity tvq-rarity-youkai">
+        {{/if}}
+
+          {{#select data.data.rarity}}
+            {{#each config.rarityTypes as |name type|}}
+              {{#if @last}}
+                {{#if @root.isGM}}
+                  <option class="tvq-rarity-{{type}}" value="{{type}}">{{localize name}}</option>
+                {{else}}
+                  <option class="tvq-rarity-{{type}}" value="{{type}}" disabled>???</option>
+                {{/if}}
+              {{else}}
+                <option class="tvq-rarity-{{type}}" value="{{type}}">{{localize name}}</option>
+              {{/if}}
+            {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+    </div>
+  
+    <div class="tvq-weaponsheet-div2">
+
+      <div class="tvq-weaponsheet-div2-intro">
+        {{#if (eq data.data.rarity "common")}}
+          <h1><input class="tvq-rarity-common" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+
+        {{#if (eq data.data.rarity "uncommon")}}
+          <h1><input class="tvq-rarity-uncommon" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+
+        {{#if (eq data.data.rarity "rare")}}
+          <h1><input class="tvq-rarity-rare" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+
+        {{#if (eq data.data.rarity "singular")}}
+          <h1><input class="tvq-rarity-singular" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+
+        {{#if (eq data.data.rarity "unique")}}
+          <h1><input class="tvq-rarity-unique-2" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+
+        {{#if (eq data.data.rarity "youkai")}}
+          <h1><input class="tvq-rarity-youkai-2" name="name" type="text" value="{{item.name}}"/></h1>
+        {{/if}}
+      </div>
+
+      <div class="tvq-weaponsheet-div2-info">
+
+        <div class="tvq-weaponsheet-div2-info-1">
+          <div class="tvq-weaponsheet-div2-info-1-1">
             <select name="data.weaponType">
               {{#select data.data.weaponType}}
                 {{#each config.weaponTypes as |name type|}}
@@ -20,20 +128,44 @@
                 {{/each}}
               {{/select}}
             </select>
-          </td>
-          <td>
-            <input class="damage" name="data.damage" type="text" value="{{data.data.damage}}" placeholder="Dégâts"/>
-          </td>
-          <td>
-            <input class="range" name="data.range" type="text" value="{{data.data.range}}" placeholder="Portée"/>
-          </td>
-          <td>
-            <input class="rangeThrowing" name="data.rangeThrowing" type="text" value="{{data.data.rangeThrowing}}" placeholder="Portée (Lancer)"/>
-          </td>
-        </tr>
-      </table>
+            <div class="tvq-weaponsheet-text">{{localize config.textData.weaponTypeText}}</div>
+          </div>
+          <div class="tvq-weaponsheet-div2-info-1-2">
+            <input class="damage" name="data.damage" type="text" value="{{data.data.damage}}" placeholder="data.damage"/>
+            <div class="tvq-weaponsheet-text">{{localize config.textData.damageText}}</div>
+          </div>
+        </div>
+
+        <div class="tvq-weaponsheet-div2-info-2">
+          <div class="tvq-weaponsheet-div2-info-2-1">
+            <input class="range" name="data.range" type="text" value="{{data.data.range}}" placeholder="data.range"/>
+            <div class="tvq-weaponsheet-text">{{localize config.textData.rangedText}}</div>
+          </div>
+          <div class="tvq-weaponsheet-div2-info-2-2">
+            <input class="rangeThrowing" name="data.rangeThrowing" type="text" value="{{data.data.rangeThrowing}}" placeholder="data.rangeThrowing"/>
+            <div class="tvq-weaponsheet-text">{{localize config.textData.rangeThrowingText}}</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tvq-weaponsheet-div2-desc">
+        <div class="sheet-perk">
+          <textarea name="data.description" rows="4" cols="33" spellcheck="false">{{data.data.description}}</textarea>
+        </div>
+        <div class="tvq-weaponsheet-text">{{localize config.textData.descText}}</div>
+
+      </div>
+      <div class="tvq-weaponsheet-div2-perk">
+        <div class="sheet-perk-2">
+          <textarea name="data.perk" rows="4" cols="33" spellcheck="false">{{data.data.perk}}</textarea>
+        </div>
+        <div class="tvq-weaponsheet-text">{{localize config.textData.perkText}}</div>
+
+      </div>
+
     </div>
-    <div class="sheet-description">
-      {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
-    </div>
+
+  </div>
+
 </form>

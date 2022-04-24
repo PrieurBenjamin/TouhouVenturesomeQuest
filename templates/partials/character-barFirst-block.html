@@ -1,13 +1,31 @@
 <section>
 
   <h1 class="character-name">
-    <div data-edit="{{actor.name}}" spellcheck="false" contenteditable>
-      {{actor.name}}
-    </div>
+    <input class="actor-name" name="name" type="text" value="{{actor.data.name}}" spellcheck="false" data-dtype="String"/>
   </h1>
 
   <div class="tvq-actor-img">
-    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+
+    <div class="tvq-options">
+
+      {{#if (eq data.data.race "earthrabbit")}}
+        <button class="toggle-frolic-buttons" type="button" title="{{localize "touhouvq.flavorText.earthrabbitFrolicButtonDisplay"}}"><i class="fas fa-leaf"></i></button>
+      {{/if}}
+
+      {{#if isGM}}
+        <button class="open-debugg" type="button" title="{{localize "touhouvq.flavorText.activeEffectsOptions"}}"><i class="fas fa-cog cog-button"></i></button>
+      {{/if}}
+
+      {{#if isGM}}
+        <button class="open-funeffects" type="button" title="{{localize "touhouvq.flavorText.activeFunEffects"}}"><i class="fas fa-bomb funeffects-button"></i></i></button>
+      {{/if}}
+      
+    </div>
+
+    <div class="tvq-actorimg">
+      <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    </div>
+
   </div>
 
 </section>

@@ -1,4 +1,163 @@
-<div data-type="item" class="weapon-card item reveal-rollable" data-item-id={{_id}} data-owner-id="{{owner}}">
-    {{> "systems/touhouvq/templates/partials/weapon-card.html"}}
-    <!-- ici, ajouter boutons vols de dé, relance de dé, etc -->
+<div class="dice-roll">
+    <div class="dice-flavor tvq-rarity-{{rollData.rarityValue}}">
+        {{#if (eq rollData.weaponTypeValue "melee")}}
+            <p>{{localize 'touhouvq.type.melee'}} - {{rarityLabel}}</p>
+        {{/if}}
+        {{#if (eq rollData.weaponTypeValue "ranged")}}
+            <p>{{localize 'touhouvq.type.ranged'}} - {{rarityLabel}}</p>
+        {{/if}}
+        {{#if (eq rollData.weaponTypeValue "throw")}}
+            <p>{{localize 'touhouvq.type.throw'}} - {{rarityLabel}}</p>
+        {{/if}}
+    </div>
+    <div class="dice-result">
+        <img class="tvq-weaponcheck-img" src="{{rollData.itemImg}}">
+        {{#if (eq rollData.rarityValue "common")}}
+            <div class="dice-formula tvq-dice-formula-weapon">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        {{#if (eq rollData.rarityValue "uncommon")}}
+            <div class="dice-formula tvq-dice-formula-weapon tvq-rarity2">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        {{#if (eq rollData.rarityValue "rare")}}
+            <div class="dice-formula tvq-dice-formula-weapon tvq-rarity3">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        {{#if (eq rollData.rarityValue "singular")}}
+            <div class="dice-formula tvq-dice-formula-weapon tvq-rarity4">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        {{#if (eq rollData.rarityValue "unique")}}
+            <div class="dice-formula tvq-dice-formula-weapon tvq-rarity5">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        {{#if (eq rollData.rarityValue "youkai")}}
+            <div class="dice-formula tvq-dice-formula-weapon tvq-rarity6">
+                {{rollData.itemName}}
+            </div>
+        {{/if}}
+        <div class="dice-flavor">
+            {{#ifNotEquals firinglinebuff 0}}
+                <!-- If I am here, the character that is making this roll is under the firing line effect -->
+                <p class="flavor-boosted">{{localize "touhouvq.raceskill.lunarrabbit"}} : +{{firinglinebuff}} {{localize "touhouvq.sheet.damagePoints"}}</p>
+            {{/ifNotEquals}}
+        </div>
+        <div class="tvq-values-dices">
+            {{#if rollData.perkValue}}
+
+                <div class="tvq-dicetotalfull">
+
+                    <div class="tvq-flex-weapon">
+                        <div class="tvq-flex-weapon-1">
+                            <img src="systems/touhouvq/assets/img/swords.webp">
+                            {{#if (eq rollData.weaponTypeValue "melee")}}
+                                <p class="{{critTotal rollResult.dice}} tvq-damagewidthauto">
+                                    {{rollResult.total}}
+                                </p>
+                                <p class="tvq-meleedamage tvq-damagewidthauto">
+                                    + {{strengthDamage}}
+                                </p>
+                                {{#ifNotEquals firinglinebuff 0}}
+                                    <p class="tvq-lunarrabbitdamage tvq-damagewidthauto">
+                                        + {{firinglinebuff}}
+                                    </p>
+                                {{/ifNotEquals}}
+                            {{else}}
+                                <p class="{{critTotal rollResult.dice}}">
+                                    {{rollResult.total}}
+                                </p>
+                                {{#ifNotEquals firinglinebuff 0}}
+                                    <p class="tvq-lunarrabbitdamage tvq-damagewidthauto">
+                                        + {{firinglinebuff}}
+                                    </p>
+                                {{/ifNotEquals}}
+                            {{/if}}
+                        </div>
+                        <div class="tvq-flex-weapon-2" style="position: relative;{{critRoll rollResult.dice}};">
+                            <img class="tvq-weapon2-imgdice" src="systems/touhouvq/assets/img/blooddrop.webp">
+                            <p class="{{critTotal rollResult.dice}} marginleft1">
+                                {{whichCrit rollResult.dice}}
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            {{else}}
+                <div class="tvq-dicetotalfull">
+
+                    <div class="tvq-flex-weapon">
+
+                        <div class="tvq-flex-weapon-1">
+                            <img src="systems/touhouvq/assets/img/swords.webp">
+                            {{#if (eq rollData.weaponTypeValue "melee")}}
+                                <p class="{{critTotal rollResult.dice}} tvq-damagewidthauto">
+                                    {{rollResult.total}}
+                                </p>
+                                <p class="tvq-meleedamage tvq-damagewidthauto">
+                                    + {{strengthDamage}}
+                                </p>
+                                {{#ifNotEquals firinglinebuff 0}}
+                                    <p class="tvq-lunarrabbitdamage tvq-damagewidthauto">
+                                        + {{firinglinebuff}}
+                                    </p>
+                                {{/ifNotEquals}}
+                            {{else}}
+                                <p class="{{critTotal rollResult.dice}}">
+                                    {{rollResult.total}}
+                                </p>
+                                {{#ifNotEquals firinglinebuff 0}}
+                                    <p class="tvq-lunarrabbitdamage tvq-damagewidthauto">
+                                        + {{firinglinebuff}}
+                                    </p>
+                                {{/ifNotEquals}}
+                            {{/if}}
+                        </div>
+
+                        <div class="tvq-flex-weapon-2" style="position: relative;{{critRoll rollResult.dice}};">
+                            <img class="tvq-weapon2-imgdice" src="systems/touhouvq/assets/img/blooddrop.webp">
+                            <p class="{{critTotal rollResult.dice}} marginleft1 ">
+                                {{whichCrit rollResult.dice}}
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            {{/if}}
+        </div>
+        <div class="dice-tooltip">
+            <section class="tooltip-part">
+                <div class="dice">
+                    <header class="part-header flexrow">
+                        <span class="part-formula">{{rollResult.formula}}</span>
+                        <p class="tvq-criticalfailure-display">
+                            {{critString rollResult.dice}}
+                        </p>
+                        <span class="part-total">{{rollResult.total}}</span>
+                    </header>
+                    <ol class="dice-rolls">
+                        {{#each rollResult.dice as |object key|}}
+                            {{#each this.results}}
+                                {{#ifEquals object.faces 4}}
+                                    <li class="roll die d{{object.faces}}">{{this.result}}</li>
+                                {{else}}
+                                    {{#ifSuperiorOrEquals this.result object.faces}}
+                                        <li class="roll max die d{{object.faces}}">{{this.result}}</li>
+                                    {{else}}
+                                        <li class="roll die d{{object.faces}}">{{this.result}}</li>
+                                    {{/ifSuperiorOrEquals}}
+                                {{/ifEquals}}
+                            {{/each}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
